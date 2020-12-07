@@ -1,0 +1,313 @@
+{
+	"info": {
+		"_postman_id": "72224f75-f2b0-4f67-bffb-e0280de044ff",
+		"name": "POC-Persona",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Persona",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "july",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"persona\",\n    \"nombre\": \"Salmon\",\n    \"apellido\": \"Pérez\",\n    \"email\": \"ale@redlink.com.ar\",\n    \"tipoDocumentoId\": 1,\n    \"tipoDocumentoDescripcion\": \"D.N.I.\",\n    \"numeroDocumento\": 39855666,\n    \"genero\": \"F\",\n    \"cuit\": \"27304268490\",\n    \"fechaNacimiento\": \"2001-01-01\",\n    \"estado\": \"A\",\n    \"fechaAlta\": \"2020-01-14\",\n    \"fechaModificacion\": \"2020-01-14\",\n    \"usuarioAlta\": \"bla\",\n    \"usuarioModificacion\": \"bla\",\n    \"version\": 0,\n    \"direcciones\": [\n        {\n            \"type\": \"direccionPersona\",\n            \"productoId\": 1,\n            \"productoDescripcion\": \"ValePEI\",\n            \"tipoDireccion\": \"P\",\n            \"calle\": \"Sarmiento\",\n            \"numero\": \"121\",\n            \"piso\": 1,\n            \"departamento\": \"A\",\n            \"localidad\": \"C.A.B.A.\",\n            \"estado\": \"A\",\n            \"fechaAlta\": \"2020-01-14\",\n            \"fechaModificacion\": \"2020-01-14\",\n            \"usuarioAlta\": \"bla\",\n            \"usuarioModificacion\": \"bla\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/myAPI/personas/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"myAPI",
+						"personas",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Persona Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"persona\",\n    \"nombre\": \"Ratón\",\n    \"apellido\": \"Pérez\",\n    \"email\": \"ale@redlink.com.ar\",\n    \"tipoDocumentoId\": 1,\n    \"tipoDocumentoDescripcion\": \"D.N.I.\",\n    \"numeroDocumento\": 32555666,\n    \"genero\": \"M\",\n    \"cuit\": \"27304268490\",\n    \"fechaNacimiento\": \"2001-01-01\",\n    \"estado\": \"A\",\n    \"fechaAlta\": \"2020-01-14\",\n    \"fechaModificacion\": \"2020-01-14\",\n    \"usuarioAlta\": \"bla\",\n    \"usuarioModificacion\": \"bla\",\n    \"version\": 0,\n    \"direcciones\": [\n        {\n            \"type\": \"direccionPersona\",\n            \"productoId\": 1,\n            \"productoDescripcion\": \"ValePEI\",\n            \"tipoDireccion\": \"P\",\n            \"calle\": \"Sarmiento\",\n            \"numero\": \"121\",\n            \"piso\": 1,\n            \"departamento\": \"A\",\n            \"localidad\": \"C.A.B.A.\",\n            \"estado\": \"A\",\n            \"fechaAlta\": \"2020-01-14\",\n            \"fechaModificacion\": \"2020-01-14\",\n            \"usuarioAlta\": \"bla\",\n            \"usuarioModificacion\": \"bla\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/exampleservices/personas/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exampleservices",
+						"personas",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activar persona",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/exampleservices/personas/activar/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exampleservices",
+						"personas",
+						"activar",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/myAPI/personas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"myAPI",
+						"personas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Persona",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"persona\",\n    \"id\": 2,\n    \"nombre\": \"Ratón\",\n    \"apellido\": \"Pérez\",\n    \"email\": \"ale@redlink.com.ar\",\n    \"tipoDocumentoId\": 1,\n    \"tipoDocumentoDescripcion\": \"Documento Único\",\n    \"numeroDocumento\": 32555666,\n    \"genero\": \"M\",\n    \"cuit\": 27304268498,\n    \"fechaNacimiento\": \"2001-01-01\",\n    \"estado\": \"A\",\n    \"fechaAlta\": \"2020-01-14\",\n    \"fechaModificacion\": \"2020-01-14\",\n    \"usuarioAlta\": \"bla\",\n    \"usuarioModificacion\": \"bla\",\n    \"version\": 0,\n    \"direcciones\": [\n        {\n            \"type\": \"direccionPersona\",\n            \"id\": 1,\n            \"productoId\": 1,\n            \"productoDescripcion\": \"ValePEI\",\n            \"tipoDireccion\": \"P\",\n            \"calle\": \"Sarmiento\",\n            \"numero\": \"121\",\n            \"piso\": 1,\n            \"departamento\": \"A\",\n            \"localidad\": \"C.A.B.A.\",\n            \"estado\": \"A\",\n            \"fechaAlta\": \"2020-01-14\",\n            \"fechaModificacion\": \"2020-01-14\",\n            \"usuarioAlta\": \"bla\",\n            \"usuarioModificacion\": \"bla\"\n        }\n    ],\n    \"activo\": null,\n    \"enmancipado\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/exampleservices/personas/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exampleservices",
+						"personas",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find All",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/myAPI/personas/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"myAPI",
+						"personas",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Persona",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/exampleservices/personas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exampleservices",
+						"personas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": {\n        \"service_id\": \"01\",\n        \"field_name\": \"cuit\",\n        \"field_value\": \"27-30426849-8\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://digi24-validation.herokuapp.com/fields/validate.json",
+					"protocol": "https",
+					"host": [
+						"digi24-validation",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"fields",
+						"validate.json"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7d25fa94-3140-4112-9a0d-de6e7cd05a5c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a912fabc-f30c-4e00-8067-8759e31e8ad5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "5029dc5d-67e2-4df3-a552-c32db56a3eb8",
+			"key": "id\n",
+			"value": "1",
+			"type": "string",
+			"disabled": true
+		}
+	],
+	"protocolProfileBehavior": {}
+}

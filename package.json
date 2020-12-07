@@ -1,0 +1,13 @@
+{
+  "name": "automationhbcustom",
+  "version": "1.0.0",
+  "description": "Project for storing postman tests",
+  "scripts": {
+    "api-test-Dummy": "newman run tests/test.postman_collection.json"
+  },
+  "author": "Arquitectura",
+  "license": "ISC",
+  "dependencies": {
+    "newman": "^5.2.1"
+  }
+}
